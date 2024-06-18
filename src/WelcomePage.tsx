@@ -8,6 +8,7 @@ const WelcomePage: React.FC = () => {
       <div className="welcome-container">
         <h1>Welcome to Podcally</h1>
         <p>Podcasts That Sound Musically</p>
+        <button className="sign-in-button">Sign In</button>
       </div>
     </div>
   );
