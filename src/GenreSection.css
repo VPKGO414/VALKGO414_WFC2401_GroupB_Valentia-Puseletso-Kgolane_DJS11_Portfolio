@@ -1,0 +1,43 @@
+.genre-section {
+    margin: 20px 0;
+    padding: 0 20px;
+    color: white;
+  }
+  
+  .genre-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #A4508B; /* Purple shade */
+  }
+  
+  .genre-scroll {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+  }
+  
+  .podcast-card {
+    background: linear-gradient(135deg, #5F0A87, #A4508B); /* Purple and pink gradient */
+    border-radius: 10px;
+    overflow: hidden;
+    width: 200px;
+    flex-shrink: 0;
+  }
+  
+  .podcast-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .podcast-card h3 {
+    font-size: 1rem;
+    margin: 10px;
+    color: white;
+  }
+  
+  .podcast-card p {
+    font-size: 0.8rem;
+    margin: 10px;
+    color: white;
+  }
+  
