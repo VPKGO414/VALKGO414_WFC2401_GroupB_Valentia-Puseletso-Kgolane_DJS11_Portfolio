@@ -7,7 +7,6 @@
   .genre-section h2 {
     font-size: 1.5rem;
     margin-bottom: 10px;
-    color: #A4508B; /* Purple shade */
   }
   
   .genre-scroll {
@@ -17,11 +16,16 @@
   }
   
   .podcast-card {
-    background: linear-gradient(135deg, #5F0A87, #A4508B); /* Purple and pink gradient */
+    background: linear-gradient(135deg, #A4508B, #5F0A87);
     border-radius: 10px;
     overflow: hidden;
-    width: 200px;
-    flex-shrink: 0;
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .podcast-card:hover {
+    transform: scale(1.05);
   }
   
   .podcast-card img {
@@ -32,12 +36,10 @@
   .podcast-card h3 {
     font-size: 1rem;
     margin: 10px;
-    color: white;
   }
   
   .podcast-card p {
     font-size: 0.8rem;
     margin: 10px;
-    color: white;
   }
   

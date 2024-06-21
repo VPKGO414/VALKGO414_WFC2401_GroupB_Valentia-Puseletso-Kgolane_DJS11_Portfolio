@@ -1,53 +1,60 @@
+/* Navbar container with purple and pink gradient background */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .navbar-brand {
-    text-align: left;
-  }
-  
-  .navbar-brand h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: #A4508B; /* Purple shade */
-  }
-  
-  .navbar-brand p {
-    margin: 0;
-    font-size: 1rem;
-    color: #A4508B; /* Purple shade */
-  }
-  
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .navbar li {
-    display: inline;
-  }
-  
-  .navbar a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    transition: background 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    background: linear-gradient(135deg, #5F0A87, #A4508B); /* Purple and pink gradient */
-    border-radius: 5px;
-  }
-  
+  background: linear-gradient(135deg, #A4508B, #5F0A87);
+  padding: 10px 20px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Styling for the brand section of the navbar */
+.navbar-brand {
+  text-align: left;
+}
+
+/* Styling for the brand title */
+.navbar-brand h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Styling for the brand slogan */
+.navbar-brand p {
+  margin: 0;
+  font-size: 1rem;
+  color: white;
+}
+
+/* Styling for the navbar links list */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+}
+
+/* Styling for each navbar link */
+.navbar li {
+  display: inline;
+}
+
+/* Styling for the navbar links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transition: background 0.3s ease;
+}
+
+/* Hover effect for the navbar links */
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}

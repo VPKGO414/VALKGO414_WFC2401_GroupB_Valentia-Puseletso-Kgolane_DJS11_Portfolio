@@ -1,25 +1,42 @@
+/* Carousel container styling with purple and pink gradient background */
 .carousel {
     position: relative;
     width: 100%;
     margin: 0 auto;
     overflow: hidden;
-    background: linear-gradient(135deg, #A4508B, #5F0A87); /* Purple and pink gradient */
+    background: linear-gradient(135deg, #A4508B, #5F0A87);
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   }
   
+  /* Flexbox to align the carousel content horizontally */
   .carousel-slide {
     display: flex;
     align-items: center;
+    justify-content: space-between;
   }
   
+  /* Styling for the carousel content */
   .carousel-content {
     text-align: center;
-    color: white;
     flex: 1;
   }
   
+  /* Styling for the carousel images */
+  .carousel-images {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    max-height: 300px; /* Adjust the height as needed */
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  
+  /* Styling for the carousel buttons */
   .carousel-button {
     background: none;
     border: none;
@@ -28,7 +45,8 @@
     cursor: pointer;
   }
   
+  /* Hover effect for the carousel buttons */
   .carousel-button:hover {
-    color: #A4508B; /* Purple shade */
+    color: #FFD700;
   }
   
