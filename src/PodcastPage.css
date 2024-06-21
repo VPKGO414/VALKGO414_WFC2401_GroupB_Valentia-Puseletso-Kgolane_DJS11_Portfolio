@@ -1,59 +1,53 @@
-/* Container for the podcast page */
 .podcast-page {
-    padding: 20px;
-    color: white;
-    background: linear-gradient(135deg, #A4508B, #5F0A87);
-  }
-  
-  /* Styling for the podcast header */
-  .podcast-header {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  /* Styling for the podcast image */
-  .podcast-header img {
-    width: 150px;
-    height: auto;
-    border-radius: 10px;
-    margin-right: 20px;
-  }
-  
-  /* Styling for the podcast info */
-  .podcast-info h1 {
-    margin: 0;
-    font-size: 2rem;
-  }
-  
-  .podcast-info p {
-    margin: 0;
-    font-size: 1rem;
-  }
-  
-  /* Styling for the episodes list */
-  .podcast-episodes {
-    margin-top: 20px;
-  }
-  
-  .season {
-    margin-bottom: 20px;
-  }
-  
-  .episode {
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .episode h3 {
-    margin: 0;
-    font-size: 1.2rem;
-  }
-  
-  .episode p {
-    margin: 0;
-    font-size: 1rem;
-  }
-  
+  padding: 20px;
+  color: white;
+  background: linear-gradient(135deg, #A4508B, #5F0A87);
+}
+
+.podcast-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.podcast-header img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.podcast-info h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.podcast-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.podcast-episodes {
+  margin-top: 20px;
+}
+
+.season {
+  margin-bottom: 20px;
+}
+
+.episode {
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.episode h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.episode p {
+  margin: 0;
+  font-size: 1rem;
+}

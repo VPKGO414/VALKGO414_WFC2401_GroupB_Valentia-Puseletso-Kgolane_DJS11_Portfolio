@@ -1,31 +1,35 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import './PodcastGrid.css'; // Importing the CSS for grid styling
+import { useNavigate } from 'react-router-dom'; // Updated import
+import './PodcastGrid.css';
 
 interface PodcastGridProps {
-  podcasts: any[]; // Defining the expected prop type
+  podcasts: any[];
 }
 
 const PodcastGrid: React.FC<PodcastGridProps> = ({ podcasts }) => {
-  const history = useHistory();
+  const navigate = useNavigate(); // Updated hook
 
   const truncateText = (text: string, maxSentences: number) => {
     const sentences = text.split('.');
     return sentences.slice(0, maxSentences).join('.') + (sentences.length > maxSentences ? '...' : '');
   };
 
-  const handleViewMore = (id: string) => {
-    history.push(`/podcast/${id}`);
+  const handleImageClick = (id: string) => {
+    navigate(`/podcast/${id}`); // Updated navigation
   };
 
   return (
     <div className="podcast-grid">
       {podcasts.map((podcast) => (
         <div key={podcast.id} className="podcast-card">
-          <img src={podcast.image} alt={podcast.title} />
+          <img
+            src={podcast.image}
+            alt={podcast.title}
+            onClick={() => handleImageClick(podcast.id)}
+            className="podcast-image"
+          />
           <h3>{podcast.title}</h3>
           <p>{truncateText(podcast.description, 2)}</p>
-          <button onClick={() => handleViewMore(podcast.id)}>View More</button>
         </div>
       ))}
     </div>
@@ -33,4 +37,3 @@ const PodcastGrid: React.FC<PodcastGridProps> = ({ podcasts }) => {
 };
 
 export default PodcastGrid;
-``

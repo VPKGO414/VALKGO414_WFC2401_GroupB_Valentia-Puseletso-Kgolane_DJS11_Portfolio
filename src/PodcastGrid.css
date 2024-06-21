@@ -1,56 +1,35 @@
-/* Grid layout for displaying podcasts */
 .podcast-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-  }
-  
-  /* Styling for individual podcast cards */
-  .podcast-card {
-    background: linear-gradient(135deg, #A4508B, #5F0A87);
-    border-radius: 10px;
-    overflow: hidden;
-    color: white;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  /* Hover effect to scale up the podcast card */
-  .podcast-card:hover {
-    transform: scale(1.05);
-  }
-  
-  /* Styling for the podcast images */
-  .podcast-card img {
-    width: 100%;
-    height: auto;
-  }
-  
-  /* Styling for the podcast titles */
-  .podcast-card h3 {
-    font-size: 1rem;
-    margin: 10px;
-  }
-  
-  /* Styling for the podcast descriptions */
-  .podcast-card p {
-    font-size: 0.8rem;
-    margin: 10px;
-  }
-  
-  /* Styling for the "View More" button */
-  .podcast-card button {
-    background: #5F0A87;
-    border: none;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 10px;
-  }
-  
-  .podcast-card button:hover {
-    background: #A4508B;
-  }
-  
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.podcast-card {
+  background: linear-gradient(135deg, #A4508B, #5F0A87);
+  border-radius: 10px;
+  overflow: hidden;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.podcast-card:hover {
+  transform: scale(1.05);
+}
+
+.podcast-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+.podcast-card h3 {
+  font-size: 1rem;
+  margin: 10px;
+}
+
+.podcast-card p {
+  font-size: 0.8rem;
+  margin: 10px;
+}
