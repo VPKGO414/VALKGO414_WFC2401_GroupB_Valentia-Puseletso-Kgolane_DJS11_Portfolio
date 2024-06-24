@@ -1,0 +1,35 @@
+.genre-section {
+  padding: 20px;
+}
+
+.genre-scroll {
+  display: flex;
+  overflow-x: auto;
+}
+
+.podcast-card {
+  flex: 0 0 auto;
+  width: 200px;
+  margin-right: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.podcast-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.podcast-card h3 {
+  font-size: 1.2em;
+  margin: 10px;
+}
+
+.podcast-card p {
+  font-size: 0.9em;
+  margin: 10px;
+  color: #666;
+}

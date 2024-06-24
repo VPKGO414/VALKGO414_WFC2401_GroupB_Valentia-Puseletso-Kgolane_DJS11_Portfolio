@@ -1,6 +1,6 @@
 // Carousel.tsx
 import React, { useState, useEffect } from 'react';
-import { fetchPreviews } from './api';
+import { fetchPreviews } from './services/api';
 
 const Carousel: React.FC = () => {
   const [previews, setPreviews] = useState<any[]>([]);

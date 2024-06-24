@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/SignInPage.css';
 
 interface SignInPageProps {
   onSuccessfulSignIn: () => void;

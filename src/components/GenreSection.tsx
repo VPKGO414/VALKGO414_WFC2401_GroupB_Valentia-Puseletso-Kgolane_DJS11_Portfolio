@@ -1,8 +1,21 @@
 import React from 'react';
-import './GenreSection.css';
+import '../styles/GenreSection.css';
+
+interface Podcast {
+  id: number;
+  title: string;
+  description: string;
+  image: string;
+}
+
+interface Genre {
+  id: number;
+  name: string;
+  podcasts: Podcast[];
+}
 
 interface GenreSectionProps {
-  genre: any;
+  genre: Genre;
 }
 
 const GenreSection: React.FC<GenreSectionProps> = ({ genre }) => {
@@ -10,7 +23,7 @@ const GenreSection: React.FC<GenreSectionProps> = ({ genre }) => {
     <div className="genre-section">
       <h2>{genre.name}</h2>
       <div className="genre-scroll">
-        {genre.podcasts.map((podcast: any) => (
+        {genre.podcasts.map((podcast) => (
           <div key={podcast.id} className="podcast-card">
             <img src={podcast.image} alt={podcast.title} />
             <h3>{podcast.title}</h3>

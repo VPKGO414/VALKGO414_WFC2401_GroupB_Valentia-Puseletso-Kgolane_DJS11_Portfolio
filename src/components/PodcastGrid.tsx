@@ -1,13 +1,20 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom'; // Updated import
-import './PodcastGrid.css';
+import { useNavigate } from 'react-router-dom';
+import '../styles/PodcastGrid.css';
+
+interface Podcast {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}
 
 interface PodcastGridProps {
-  podcasts: any[];
+  podcasts: Podcast[];
 }
 
 const PodcastGrid: React.FC<PodcastGridProps> = ({ podcasts }) => {
-  const navigate = useNavigate(); // Updated hook
+  const navigate = useNavigate();
 
   const truncateText = (text: string, maxSentences: number) => {
     const sentences = text.split('.');
@@ -15,7 +22,7 @@ const PodcastGrid: React.FC<PodcastGridProps> = ({ podcasts }) => {
   };
 
   const handleImageClick = (id: string) => {
-    navigate(`/podcast/${id}`); // Updated navigation
+    navigate(`/podcast/${id}`);
   };
 
   return (

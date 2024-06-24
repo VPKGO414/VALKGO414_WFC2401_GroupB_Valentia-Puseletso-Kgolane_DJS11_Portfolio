@@ -1,15 +1,3 @@
-/* Navbar container with purple and pink gradient background */
-.navbar {
-  background: linear-gradient(135deg, #A4508B, #5F0A87);
-  padding: 10px 20px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
 /* Styling for the brand section of the navbar */
 .navbar-brand {
@@ -42,6 +30,7 @@
 /* Styling for each navbar link */
 .navbar li {
   display: inline;
+  position: relative;
 }
 
 /* Styling for the navbar links */
@@ -57,4 +46,42 @@
 .navbar a:hover {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 5px;
+}
+
+/* Dropdown button styling */
+.dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }

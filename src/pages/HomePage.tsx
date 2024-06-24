@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import NavBar from './NavBar';
-import FeaturedCarousel from './FeaturedCarousel';
-import PodcastGrid from './PodcastGrid';
-import { fetchPreviews } from './api';
-import './HomePage.css';
+import NavBar from '../components/NavBar';
+import FeaturedCarousel from '../components/FeaturedCarousel';
+import PodcastGrid from '../components/PodcastGrid';
+import { fetchPreviews } from '../services/api';
+import '../styles/HomePage.css';
 
 const HomePage: React.FC = () => {
   const [podcasts, setPodcasts] = useState<any[]>([]);

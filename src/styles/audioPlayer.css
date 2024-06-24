@@ -1,0 +1,58 @@
+/* audioPlayer.css */
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .audio-player-controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .audio-player-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .audio-player-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .audio-player-progress {
+    flex: 1;
+    margin: 0 10px;
+    height: 8px;
+    background-color: #ccc;
+    position: relative;
+  }
+  
+  .audio-player-progress-bar {
+    height: 100%;
+    background-color: #007bff;
+    width: 0;
+    transition: width 0.2s ease;
+  }
+  
+  .audio-player-time {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  
+  .audio-player-time-end {
+    margin-left: 10px;
+  }
+  
+  .audio-player-time-separator {
+    margin: 0 5px;
+  }
+  

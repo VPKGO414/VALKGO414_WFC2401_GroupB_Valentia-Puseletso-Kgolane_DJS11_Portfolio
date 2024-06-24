@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/WelcomePage.css';
 
 interface WelcomePageProps {
   onSignInClick: () => void;
@@ -7,10 +8,9 @@ interface WelcomePageProps {
 const WelcomePage: React.FC<WelcomePageProps> = ({ onSignInClick }) => {
   return (
     <div className="welcome-page">
-      <div className="welcome-container">
-        <h1>Welcome to Podcally!</h1>
-        <button onClick={onSignInClick}>Sign In</button>
-      </div>
+      <h1>Welcome to Podcally</h1>
+      <p>Podcasts That Sound Musically</p>
+      <button onClick={onSignInClick}>Sign In</button>
     </div>
   );
 };

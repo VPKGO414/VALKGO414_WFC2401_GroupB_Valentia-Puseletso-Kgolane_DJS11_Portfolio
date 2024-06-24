@@ -1,22 +1,58 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { fetchShow } from './api';
-import './PodcastPage.css';
+import { fetchShow } from '../services/api';
+import '../styles/PodcastPage.css';
+
+interface Episode {
+  id: string;
+  title: string;
+  description: string;
+}
+
+interface Season {
+  id: string;
+  number: number;
+  episodes: Episode[];
+}
+
+interface Podcast {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+  seasons: Season[];
+}
 
 const PodcastPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
-  const [podcast, setPodcast] = useState<any>(null);
+  const [podcast, setPodcast] = useState<Podcast | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const loadPodcast = async () => {
-      const data = await fetchShow(id);
-      setPodcast(data);
+      try {
+        const data = await fetchShow(id);
+        setPodcast(data);
+      } catch (error) {
+        setError('Error fetching podcast.');
+      } finally {
+        setLoading(false);
+      }
     };
     loadPodcast();
   }, [id]);
 
-  if (!podcast) {
+  if (loading) {
     return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (!podcast) {
+    return <div>Failed to load podcast.</div>;
   }
 
   return (
@@ -29,10 +65,10 @@ const PodcastPage: React.FC = () => {
         </div>
       </div>
       <div className="podcast-episodes">
-        {podcast.seasons.map((season: any) => (
+        {podcast.seasons.map((season) => (
           <div key={season.id} className="season">
             <h2>Season {season.number}</h2>
-            {season.episodes.map((episode: any) => (
+            {season.episodes.map((episode) => (
               <div key={episode.id} className="episode">
                 <h3>{episode.title}</h3>
                 <p>{episode.description}</p>
