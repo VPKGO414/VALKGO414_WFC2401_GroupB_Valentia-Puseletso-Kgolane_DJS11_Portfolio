@@ -13,8 +13,12 @@ const FeaturedCarousel: React.FC = () => {
 
   useEffect(() => {
     const loadPreviews = async () => {
-      const data: Preview[] = await fetchPreviews();
-      setPreviews(data);
+      try {
+        const data = await fetchPreviews();
+        setPreviews(data);
+      } catch (error) {
+        console.error('Error loading previews:', error);
+      }
     };
     loadPreviews();
   }, []);

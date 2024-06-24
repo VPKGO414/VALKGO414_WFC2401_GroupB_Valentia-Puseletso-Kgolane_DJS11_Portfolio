@@ -15,10 +15,14 @@ interface Genre {
 }
 
 interface GenreSectionProps {
-  genre: Genre;
+  genre: Genre | null;
 }
 
 const GenreSection: React.FC<GenreSectionProps> = ({ genre }) => {
+  if (!genre) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="genre-section">
       <h2>{genre.name}</h2>

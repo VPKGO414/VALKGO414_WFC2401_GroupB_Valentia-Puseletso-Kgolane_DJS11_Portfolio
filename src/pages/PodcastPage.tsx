@@ -33,6 +33,7 @@ const PodcastPage: React.FC = () => {
     const loadPodcast = async () => {
       try {
         const data = await fetchShow(id);
+        console.log(id)
         setPodcast(data);
       } catch (error) {
         setError('Error fetching podcast.');

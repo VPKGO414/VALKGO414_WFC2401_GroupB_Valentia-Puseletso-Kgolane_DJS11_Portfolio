@@ -1,45 +1,76 @@
 import axios from 'axios';
+import { Preview} from '../types';
+import { Podcast } from '../types';
 
 const api = axios.create({
-  baseURL: 'https://podcast-api.netlify.app', // Replace with your API base URL
+  baseURL: 'https://podcast-api.netlify.app',
 });
 
-export const fetchGenres = async () => {
+export const fetchPreviews = async (): Promise<Preview[]> => {
+  try {
+    const response = await api.get('/previews');
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching previews:', error);
+    throw error; // Handle error as needed
+  }
+};
+
+export const fetchGenres = async (): Promise<any[]> => { // Define a specific type if available
   try {
     const response = await api.get('/genres');
-    return response.data; // Assuming response.data is an array of genres
+    return response.data;
   } catch (error) {
     console.error('Error fetching genres:', error);
     throw error; // Handle error as needed
   }
 };
 
-export const fetchShowsByGenre = async (genreId: string) => {
+export const fetchShowsByGenre = async (genreId: string): Promise<any[]> => { // Define a specific type if available
   try {
     const response = await api.get(`/genres/${genreId}/shows`);
-    return response.data; // Assuming response.data is an array of shows for a given genre
+    return response.data;
   } catch (error) {
-    console.error(`Error fetching shows for genre ${genreId}:`, error);
+    console.error('Error fetching shows:', error);
     throw error; // Handle error as needed
   }
 };
 
-export const fetchSeasonsByShow = async (showId: string) => {
+export const fetchSeasonsByShow = async (showId: string): Promise<any[]> => { // Define a specific type if available
   try {
     const response = await api.get(`/shows/${showId}/seasons`);
-    return response.data; // Assuming response.data is an array of seasons for a given show
+    return response.data;
   } catch (error) {
-    console.error(`Error fetching seasons for show ${showId}:`, error);
+    console.error('Error fetching seasons:', error);
     throw error; // Handle error as needed
   }
 };
 
-export const fetchEpisodesBySeason = async (showId: string, seasonNumber: string) => {
+export const fetchEpisodesBySeason = async (showId: string, seasonNumber: string): Promise<any[]> => { // Define a specific type if available
   try {
     const response = await api.get(`/shows/${showId}/seasons/${seasonNumber}/episodes`);
-    return response.data; // Assuming response.data is an array of episodes for a given show and season
+    return response.data;
   } catch (error) {
-    console.error(`Error fetching episodes for show ${showId}, season ${seasonNumber}:`, error);
+    console.error('Error fetching episodes:', error);
     throw error; // Handle error as needed
   }
 };
+
+export const fetchShow = async (id: string): Promise<any> => { // Define a specific type if available
+  try {
+    const response = await api.get(`/id/${id}`); 
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching show:', error);
+    throw error; // Handle error as needed
+  }
+};
+ 
+export const fetchPodcasts = async (): Promise<any> => {
+  try {
+    const response = await api.get();
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching podcast list', error);
+  }
+}
