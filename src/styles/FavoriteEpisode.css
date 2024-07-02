@@ -1,0 +1,93 @@
+/* FavoriteEpisodes.css */
+
+/* General container styling */
+.favourites-container {
+    min-height: 100vh;
+    padding-top: 20px;
+    background-color: #f3f4f6; /* Light grey background */
+}
+
+/* Header styling */
+.favourites-header {
+    color: #ec4899; /* Pink color */
+    font-weight: 600;
+    font-size: 2.25rem; /* 4xl size */
+    margin-left: 5rem; /* 20px */
+    padding-top: 2.5rem; /* 10px */
+}
+
+/* Filter button styling */
+.filter-button {
+    color: #8b5cf6; /* Purple color */
+    margin-left: 2.5rem; /* 10px */
+}
+
+.filter-button:hover {
+    color: #ec4899; /* Hover pink color */
+}
+
+/* Show container styling */
+.show-container {
+    margin-bottom: 3rem; /* 12px */
+}
+
+.show-container img {
+    height: 11rem; /* 44px */
+    width: 11rem; /* 44px */
+    margin-bottom: 1rem; /* 4px */
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+.show-container h2 {
+    font-size: 1.5rem; /* 2xl size */
+    font-weight: 600;
+    margin-bottom: 0.75rem; /* 3px */
+}
+
+.show-container p {
+    margin-bottom: 0.25rem; /* 1px */
+}
+
+/* Episode list styling */
+.episode-list {
+    padding-left: 0.5rem; /* 2px */
+    width: 91.666667%; /* w-11/12 */
+}
+
+.episode-list h3 {
+    font-size: 1.125rem; /* lg size */
+    font-weight: 500;
+}
+
+.episode-list ul {
+    padding-bottom: 0.5rem; /* 2px */
+}
+
+.episode-list li {
+    font-weight: 300;
+}
+
+/* Remove button styling */
+.remove-button {
+    color: #ef4444; /* Red color */
+    padding-right: 0.25rem; /* 1px */
+    font-weight: 600;
+}
+
+.remove-button:hover {
+    color: #b91c1c; /* Darker red on hover */
+}
+
+/* Clear all button styling */
+.clear-all-button {
+    padding: 0.25rem; /* 1px */
+    color: #ef4444; /* Red color */
+    font-weight: 600;
+    border: 2px solid #ef4444; /* Border red color */
+    border-radius: 0.25rem; /* rounded-md */
+}
+
+.clear-all-button:hover {
+    color: #b91c1c; /* Darker red on hover */
+    border-color: #b91c1c; /* Darker border on hover */
+}

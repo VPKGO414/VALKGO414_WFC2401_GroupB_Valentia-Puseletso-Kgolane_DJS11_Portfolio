@@ -1,32 +1,22 @@
 import React from 'react';
-import '../styles/SignInPage.css';
 
-interface SignInPageProps {
-  onSuccessfulSignIn: () => void;
-}
-
-const SignInPage: React.FC<SignInPageProps> = ({ onSuccessfulSignIn }) => {
-  const handleSignIn = () => {
-    // Simulate successful sign-in
-    onSuccessfulSignIn();
-  };
-
+const SignInPage: React.FC = () => {
   return (
-    <div className="sign-in-page">
-      <div className="sign-in-container">
-        <h1>Sign In</h1>
-        <form onSubmit={(e) => { e.preventDefault(); handleSignIn(); }}>
-          <div>
-            <label htmlFor="username">Username</label>
-            <input type="text" id="username" required />
-          </div>
-          <div>
-            <label htmlFor="password">Password</label>
-            <input type="password" id="password" required />
-          </div>
-          <button type="submit">Sign In</button>
-        </form>
-      </div>
+    <div>
+      <h2>Sign In</h2>
+      <form>
+        <label>
+          Username:
+          <input type="text" name="username" />
+        </label>
+        <br />
+        <label>
+          Password:
+          <input type="password" name="password" />
+        </label>
+        <br />
+        <button type="submit">Sign In</button>
+      </form>
     </div>
   );
 };

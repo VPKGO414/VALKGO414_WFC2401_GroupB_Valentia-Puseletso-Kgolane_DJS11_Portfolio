@@ -1,0 +1,35 @@
+:root {
+    --primary-color: #FF69B4; /* Pink */
+    --primary-color-light: #FF95C8; /* Light pink */
+    --primary-color-dark: #E0407C; /* Dark pink */
+    --secondary-color: #9C27B0; /* Purple */
+    --secondary-color-light: #AB47BC; /* Light purple */
+    --secondary-color-dark: #7B1FA2; /* Dark purple */
+  }
+  
+  body {
+    background-color: var(--primary-color);
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  h1, h2, h3 {
+    color: var(--secondary-color);
+  }
+  
+  .button {
+    background-color: var(--secondary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: var(--secondary-color-light);
+  }
+  
+  .button:active {
+    background-color: var(--secondary-color-dark);
+  }

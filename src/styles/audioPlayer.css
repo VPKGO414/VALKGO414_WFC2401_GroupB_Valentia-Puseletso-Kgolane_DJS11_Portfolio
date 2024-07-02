@@ -1,58 +1,114 @@
-/* audioPlayer.css */
+/* AudioPlayer.css */
 
-.audio-player {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .audio-player-controls {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .audio-player-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .audio-player-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .audio-player-progress {
-    flex: 1;
-    margin: 0 10px;
-    height: 8px;
-    background-color: #ccc;
-    position: relative;
-  }
-  
-  .audio-player-progress-bar {
-    height: 100%;
-    background-color: #007bff;
-    width: 0;
-    transition: width 0.2s ease;
-  }
-  
-  .audio-player-time {
-    font-size: 0.9rem;
-    color: #555;
-  }
-  
-  .audio-player-time-end {
-    margin-left: 10px;
-  }
-  
-  .audio-player-time-separator {
-    margin: 0 5px;
-  }
-  
+/* General container styling */
+.audio-player-container {
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* Black background */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+/* Header styling */
+.audio-player-header {
+  color: #8b5cf6; /* Purple color */
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Episode title styling */
+.audio-player-title {
+  color: #ec4899; /* Pink color */
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+/* Audio controls styling */
+.audio-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Play button styling */
+.play-button {
+  color: #ec4899; /* Pink color */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.play-button:hover {
+  color: #b91c1c; /* Darker pink on hover */
+}
+
+/* Audio progress bar styling */
+.audio-progress {
+  width: 100%;
+  height: 8px;
+  background-color: #8b5cf6; /* Purple color */
+  position: relative;
+  margin-top: 1rem;
+}
+
+/* Progress bar fill styling */
+.audio-progress-fill {
+  height: 100%;
+  background-color: #ec4899; /* Pink color */
+}
+
+/* Time display styling */
+.audio-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #8b5cf6; /* Purple color */
+  margin-top: 0.5rem;
+}
+
+/* Volume control styling */
+.volume-control {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+/* Volume icon styling */
+.volume-icon {
+  color: #ec4899; /* Pink color */
+  cursor: pointer;
+}
+
+.volume-icon:hover {
+  color: #b91c1c; /* Darker pink on hover */
+}
+
+/* Volume slider styling */
+.volume-slider {
+  width: 100%;
+  height: 4px;
+  background-color: #8b5cf6; /* Purple color */
+  position: relative;
+  margin-left: 0.5rem;
+}
+
+/* Volume slider fill styling */
+.volume-slider-fill {
+  height: 100%;
+  background-color: #ec4899; /* Pink color */
+}
+
+/* Close button styling */
+.close-button {
+  color: #8b5cf6; /* Purple color */
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  color: #b91c1c; /* Darker pink on hover */
+}

@@ -1,0 +1,53 @@
+/* PopUp.css */
+
+/* General container styling */
+.popup-container {
+    position: fixed;
+    top: 8rem;
+    left: 12rem;
+    width: 75%; /* Adjust as needed */
+    height: 80%; /* Adjust as needed */
+    background-color: #f3f4f6; /* Light grey background */
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Header styling */
+.popup-header {
+    color: #8b5cf6; /* Purple color */
+    font-weight: 600;
+    font-size: 2.25rem; /* 4xl size */
+    margin-bottom: 1rem; /* Adjust as needed */
+}
+
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: #8b5cf6; /* Purple color */
+    cursor: pointer;
+}
+
+.close-button:hover {
+    color: #ec4899; /* Hover pink color */
+}
+
+/* Content styling */
+.popup-content {
+    margin-top: 1rem; /* Adjust as needed */
+}
+
+/* Footer styling */
+.popup-footer {
+    margin-top: 2rem; /* Adjust as needed */
+}
+
+/* Placeholder styles */
+.popup-placeholder {
+    color: #8b5cf6; /* Purple color */
+    font-weight: 500;
+}
+
+/* Other styles as needed */

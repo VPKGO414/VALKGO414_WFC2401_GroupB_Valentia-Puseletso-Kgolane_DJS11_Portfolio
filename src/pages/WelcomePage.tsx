@@ -1,8 +1,8 @@
 import React from 'react';
-import '../styles/WelcomePage.css';
+import '../styles/WelcomePage.css'; // Import the WelcomePage CSS
 
 interface WelcomePageProps {
-  onSignInClick: () => void;
+  onSignInClick: () => void; // Callback function when sign-in button is clicked
 }
 
 const WelcomePage: React.FC<WelcomePageProps> = ({ onSignInClick }) => {
@@ -10,7 +10,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ onSignInClick }) => {
     <div className="welcome-page">
       <h1>Welcome to Podcally</h1>
       <p>Podcasts That Sound Musically</p>
-      <button onClick={onSignInClick}>Sign In</button>
+      <button className="sign-in-button" onClick={onSignInClick}>Sign In</button>
     </div>
   );
 };
