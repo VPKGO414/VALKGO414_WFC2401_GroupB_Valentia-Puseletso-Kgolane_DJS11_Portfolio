@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Preview, Genre } from './src/types';
-import { getAllPreviews, getGenres } from '../services/api';
+import { Preview, Genre } from '../types';
+import { getAllPreviews, getGenres } from '../utils/api';
 import LoadIcon from '../components/LoadIcon';
 import PodcastGrid from '../components/PodcastGrid';
 import Filters from '../components/Filters';
@@ -9,7 +9,7 @@ import FeaturedCarousel from '../components/FeaturedCarousel';
 import AudioPlayer from '../components/AudioPlayer';
 import NavBar from '../components/NavBar';
 import GenreSection from '../components/GenreSection';
-import HomePage from '../styles/HomePage.css';
+import '../styles/HomePage.css';
 
 interface HomePageProps {
     onTileClick: (show: Preview) => void;
@@ -33,7 +33,6 @@ const HomePage: React.FC<HomePageProps> = ({
         (a: Preview, b: Preview) => number
     >(() => () => 0);
 
-    // Fetch podcast previews and genres on component mount
     useEffect(() => {
         async function loadPreviews() {
             setLoading(true);
@@ -52,7 +51,6 @@ const HomePage: React.FC<HomePageProps> = ({
         loadPreviews();
     }, []);
 
-    // Function to apply filters and sorting to previews
     const applyFiltersAndSort = useCallback(() => {
         let updatedPreviews = [...previews];
 
@@ -93,7 +91,6 @@ const HomePage: React.FC<HomePageProps> = ({
         setSortFunction(() => sortFunc);
     };
 
-    // Loading state indicator
     if (loading) {
         return (
             <div data-ref="homepage-container">
@@ -102,12 +99,10 @@ const HomePage: React.FC<HomePageProps> = ({
         );
     }
 
-    // Error state handler
     if (error) {
         return <h1>There was an error: {error.message}</h1>;
     }
 
-    // Generate preview tiles for filtered previews
     const previewTiles = filteredPreviews.map((preview) => (
         <PodcastGrid
             key={preview.id}
@@ -119,7 +114,7 @@ const HomePage: React.FC<HomePageProps> = ({
 
     return (
         <>
-            <NavBar handleNav={handleNav} /> {/* Include NavBar component */}
+            <NavBar handleNav={handleNav} />
             <SearchBar
                 onSearchTextChange={handleSearchTextChange}
                 hidepopup={hidepopup}
@@ -134,9 +129,9 @@ const HomePage: React.FC<HomePageProps> = ({
                     />
                 </div>
                 <hr />
-                <FeaturedCarousel /> {/* Display the FeaturedCarousel component */}
+                <FeaturedCarousel />
                 <hr />
-                <GenreSection genres={genres} /> {/* Display the GenreSection component */}
+                <GenreSection genres={genres} />
                 <div data-ref="tile-container">
                     {previewTiles.length === 0 ? (
                         <div>No results found.</div>
@@ -145,7 +140,7 @@ const HomePage: React.FC<HomePageProps> = ({
                     )}
                 </div>
             </div>
-            <AudioPlayer /> {/* Display the AudioPlayer component */}
+            <AudioPlayer />
         </>
     );
 };

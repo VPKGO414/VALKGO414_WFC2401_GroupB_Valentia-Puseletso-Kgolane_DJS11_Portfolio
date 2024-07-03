@@ -1,51 +1,30 @@
-import React, {useState} from 'react';
-import { Link } from 'react-router-dom';
-import '../styles/NavBar.css';
+import React, { useState } from 'react';
+import '../styles/navBar.css';
 
-const genres = [
-  { id: 1, title: 'Personal Growth' },
-  { id: 2, title: 'Investigative Journalism' },
-  { id: 3, title: 'History' },
-  { id: 4, title: 'Comedy' },
-  { id: 5, title: 'Entertainment' },
-  { id: 6, title: 'Business' },
-  { id: 7, title: 'Fiction' },
-  { id: 8, title: 'News' },
-  { id: 9, title: 'Kids and Family' },
-];
+interface NavBarProps {
+  onNavigate: (page: string) => void;
+}
 
-const NavBar: React.FC = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
+  const [currentPage, setCurrentPage] = useState('HomePage');
 
-  const toggleDropdown = () => {
-    setDropdownOpen(!dropdownOpen);
+  const handleNavigation = (page: string) => {
+    setCurrentPage(page);
+    onNavigate(page);
   };
+
   return (
     <nav className="navbar">
-      <div className="navbar-brand">
-        <h1>Podcally</h1>
-        <p>Podcasts that sound musically</p>
-      </div>
       <ul>
-        <li><Link to="/">Home</Link></li>
-        <li 
-          className="dropdown" 
-          onMouseEnter={toggleDropdown} 
-          onMouseLeave={toggleDropdown}
-        >
-          <button className="dropbtn">Genres</button>
-          {dropdownOpen && (
-            <div className="dropdown-content">
-              {genres.map((genre) => (
-                <Link key={genre.id} to={`/genre/${genre.id}`} onClick={() => setDropdownOpen(false)}>
-                  {genre.title}
-                </Link>
-              ))}
-            </div>
-          )}
+        <li className={currentPage === 'HomePage' ? 'active' : ''} onClick={() => handleNavigation('HomePage')}>
+          Home
         </li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
+        <li className={currentPage === 'GenrePage' ? 'active' : ''} onClick={() => handleNavigation('GenrePage')}>
+          Genres
+        </li>
+        <li className={currentPage === 'FavouriteEpisodes' ? 'active' : ''} onClick={() => handleNavigation('FavouriteEpisodes')}>
+          Favourites
+        </li>
       </ul>
     </nav>
   );

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchPreviews } from '../services/api';
+import { getAllPreviews } from '../utils/api';
 import CarouselControls from './CarouselControls';
 import CarouselImages from './CarouselImages';
 import { Preview } from '../types';

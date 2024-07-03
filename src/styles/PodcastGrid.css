@@ -33,3 +33,12 @@
   font-size: 0.8rem;
   margin: 10px;
 }
+
+.podcast-grid-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px; /* Adjust height as needed */
+  font-size: 1.2rem;
+  color: #333; /* Adjust text color */
+}

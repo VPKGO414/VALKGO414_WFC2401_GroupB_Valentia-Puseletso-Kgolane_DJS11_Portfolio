@@ -1,27 +1,23 @@
 import React from 'react';
-import './PopUp.css';
+import '../styles/PopUp.css';
 
-interface PopUpProps {
-    // Props definition
+interface PopupProps {
+  show: boolean;
+  message: string;
+  onClose: () => void;
 }
 
-const PopUp: React.FC<PopUpProps> = ({ /* props */ }) => {
-    return (
-        <div className="popup-container">
-            <div className="popup-header">
-                {/* Header content */}
-            </div>
-            <button className="close-button">
-                {/* Close button content */}
-            </button>
-            <div className="popup-content">
-                {/* Main content */}
-            </div>
-            <div className="popup-footer">
-                {/* Footer content */}
-            </div>
-        </div>
-    );
-}
+const Popup: React.FC<PopupProps> = ({ show, message, onClose }) => {
+  if (!show) return null;
 
-export default PopUp;
+  return (
+    <div className="popup">
+      <div className="popup-content">
+        <button onClick={onClose}>Close</button>
+        <p>{message}</p>
+      </div>
+    </div>
+  );
+};
+
+export default Popup;

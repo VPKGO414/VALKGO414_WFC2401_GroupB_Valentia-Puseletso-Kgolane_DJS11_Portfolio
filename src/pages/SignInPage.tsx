@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/SignInPage.css';
 
 const SignInPage: React.FC = () => {
   return (

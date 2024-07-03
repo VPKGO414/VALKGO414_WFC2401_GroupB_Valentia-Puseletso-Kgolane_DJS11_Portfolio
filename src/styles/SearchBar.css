@@ -1,0 +1,32 @@
+/* SearchBar.css */
+.search-bar-container {
+    position: fixed;
+    right: 16px;
+    top: 4px;
+    z-index: 50;
+}
+
+.search-input {
+    position: absolute;
+    padding: 8px;
+    padding-right: 40px;
+    right: 0;
+    background-color: #d9a7c7; /* pink */
+    color: #9b59b6; /* purple */
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 200px;
+}
+
+.search-input:focus {
+    outline: #9b59b6 solid 2px; /* purple */
+}
+
+.clear-button {
+    font-weight: 500;
+    margin-top: 6px;
+    margin-right: 4px;
+    color: #9b59b6; /* purple */
+}
