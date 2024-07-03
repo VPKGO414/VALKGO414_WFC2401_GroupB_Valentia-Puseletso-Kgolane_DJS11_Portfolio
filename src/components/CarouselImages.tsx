@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Preview } from '../interfaces'; // Adjust path as per your project structure
+
+interface CarouselImagesProps {
+    previews: Preview[];
+}
 
 // Styled component for the carousel images container
 const CarouselImagesContainer = styled.div`
@@ -20,18 +25,11 @@ const Image = styled.img`
     object-fit: cover;
 `;
 
-const CarouselImages = () => {
-    // Example data - replace with your actual data or logic
-    const images = [
-        { id: 1, src: '/path/to/image1.jpg', alt: 'Image 1' },
-        { id: 2, src: '/path/to/image2.jpg', alt: 'Image 2' },
-        { id: 3, src: '/path/to/image3.jpg', alt: 'Image 3' },
-    ];
-
+const CarouselImages: React.FC<CarouselImagesProps> = ({ previews }) => {
     return (
         <CarouselImagesContainer className="carousel-images">
-            {images.map((image) => (
-                <Image key={image.id} src={image.src} alt={image.alt} />
+            {previews.map((preview) => (
+                <Image key={preview.id} src={preview.image} alt={preview.title} />
             ))}
         </CarouselImagesContainer>
     );

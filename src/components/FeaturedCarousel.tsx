@@ -1,56 +1,56 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getAllPreviews } from '../utils/api';
-import CarouselControls from './CarouselControls';
-import CarouselImages from './CarouselImages';
-import { Preview } from '../types';
+import { Preview } from '../interfaces'; // Adjust path as per your project structure
+import { getAllPreviews } from '../utils/api'; // Adjust path as per your project structure
+import CarouselImages from './CarouselImages'; // Ensure CarouselImages component is correctly imported
+import CarouselControls from './CarouselControls'; // Ensure CarouselControls component is correctly imported
 import '../styles/FeaturedCarousel.css';
 
 const FeaturedCarousel: React.FC = () => {
-  const [previews, setPreviews] = useState<Preview[]>([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const navigate = useNavigate();
+    const [previews, setPreviews] = useState<Preview[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const loadPreviews = async () => {
-      try {
-        const data = await fetchPreviews();
-        setPreviews(data);
-      } catch (error) {
-        console.error('Error loading previews:', error);
-      }
+    useEffect(() => {
+        const loadPreviews = async () => {
+            try {
+                const previewData = await getAllPreviews();
+                setPreviews(previewData);
+            } catch (err: any) {
+                setError(`Error loading previews: ${err.message}`);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadPreviews();
+    }, []);
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % previews.length);
     };
-    loadPreviews();
-  }, []);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % previews.length);
-  };
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) => (prevIndex - 1 + previews.length) % previews.length);
+    };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + previews.length) % previews.length);
-  };
+    if (loading) {
+        return <div>Loading...</div>;
+    }
 
-  const handleImageClick = (id: string) => {
-    navigate(`/podcast/${id}`);
-  };
+    if (error) {
+        return <div>{error}</div>;
+    }
 
-  return (
-    <div className="carousel">
-      {previews.length > 0 && (
-        <div className="carousel-slide">
-          <CarouselControls onPrev={prevSlide} onNext={nextSlide} />
-          <div className="carousel-content">
-            <CarouselImages
-              previews={previews}
-              currentIndex={currentIndex}
-              onImageClick={handleImageClick}
-            />
-          </div>
+    // Ensure we have enough previews to show 4 images
+    const selectedPreviews = previews.slice(currentIndex, currentIndex + 4);
+
+    return (
+        <div className="featured-carousel">
+            <CarouselImages previews={selectedPreviews} /> {/* Pass 4 selected previews */}
+            <CarouselControls onNext={handleNext} onPrev={handlePrev} />
         </div>
-      )}
-    </div>
-  );
+    );
 };
 
 export default FeaturedCarousel;
